@@ -1,27 +1,17 @@
 import { motion } from 'framer-motion'
 import { FadeIn, Eyebrow, Aurora } from './ui'
 
-const products = [
-  {
-    name: 'Latent Lab Academy',
-    url: 'https://latentlabacademy.com',
-    badge: 'Live',
-    description:
-      'An interactive forensic education platform built for learning latent fingerprint analysis. Features side-by-side comparison tools, interactive canvas minutiae marking with Fabric.js, and dynamic subject datasets — currently used in a high school forensics class.',
-    tech: ['React', 'Fabric.js', 'JavaScript'],
-    icon: '🔬',
-    accent: '#22d3ee',
-  },
-  {
-    name: 'DM Finder',
-    url: 'https://dmfinder.io',
-    badge: 'Live',
-    description:
-      'A matchmaking platform connecting tabletop RPG players with Dungeon Masters. Built for the TTRPG community to find the right DM for their campaign style, experience level, and schedule.',
-    tech: ['React', 'Node.js', 'PostgreSQL'],
-    icon: '🎲',
-    accent: '#ec4899',
-  },
+const stats = [
+  { value: '6', label: 'Live Products' },
+  { value: '0', label: 'Middlemen' },
+  { value: '<24h', label: 'Reply Time' },
+  { value: '2026', label: 'Forge Lit' },
+]
+
+const services = [
+  { title: 'AI Consulting & Automation', desc: 'Custom agents, internal copilots, and workflow automation that take back the hours teams burn on repetitive work.', accent: '#22d3ee' },
+  { title: 'Custom Web & Software', desc: 'Platforms, internal tools, and sites built from first sketch to launch — no template clutter, no boilerplate bloat.', accent: '#ec4899' },
+  { title: 'Live Products', desc: 'Software in production and getting used today — from construction AI to race-day timing platforms.', accent: '#a3e635' },
 ]
 
 export default function GrubForge() {
@@ -45,60 +35,58 @@ export default function GrubForge() {
               LLC — EST. 2026
             </span>
           </div>
-          <p className="text-haze text-lg md:text-xl max-w-2xl mb-16 leading-relaxed">
-            My vehicle for turning ideas into real software. Grüb Forge is where passion projects
-            become live products — built, shipped, and maintained by me.
+          <p className="font-display text-xl md:text-2xl font-bold text-bright mb-6 tracking-wide">
+            WE FORGE SOFTWARE THAT SHIPS.
+          </p>
+          <p className="text-haze text-lg md:text-xl max-w-2xl mb-12 leading-relaxed">
+            My independent software studio — AI consulting, custom builds, and live products
+            in production today. One operating principle: find the real problem, then build
+            the sharpest possible tool for it. The same person who architects the system
+            writes the code that ships it.
           </p>
         </FadeIn>
 
-        {/* Product Cards */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {products.map((product, i) => (
-            <FadeIn key={product.name} delay={0.15 * (i + 1)}>
-              <motion.a
-                href={product.url}
-                target="_blank"
-                rel="noreferrer"
-                whileHover={{ y: -8, rotate: i % 2 === 0 ? -0.5 : 0.5 }}
-                transition={{ duration: 0.25 }}
-                className="block card-spectrum card-spectrum-hover rounded-3xl p-8 group h-full"
+        {/* Services */}
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {services.map((s, i) => (
+            <FadeIn key={s.title} delay={0.1 * (i + 1)}>
+              <motion.div
+                whileHover={{ y: -6 }}
+                className="card-spectrum card-spectrum-hover rounded-3xl p-7 h-full"
               >
-                <div className="flex items-start justify-between mb-6">
-                  <motion.div
-                    className="text-5xl"
-                    whileHover={{ rotate: [0, -12, 12, 0], transition: { duration: 0.5 } }}
-                  >
-                    {product.icon}
-                  </motion.div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#a3e635' }} />
-                    <span className="text-xs font-mono tracking-widest font-bold" style={{ color: '#a3e635' }}>{product.badge}</span>
-                  </div>
+                <div className="font-mono text-xs tracking-widest mb-3 font-bold" style={{ color: s.accent }}>
+                  /0{i + 1}
                 </div>
-
-                <h3 className="font-display text-2xl font-bold mb-4 transition-colors text-bright group-hover:text-spectrum">
-                  {product.name}
-                </h3>
-                <p className="text-haze leading-relaxed mb-8">
-                  {product.description}
-                </p>
-
-                <div className="flex items-center justify-between">
-                  <div className="flex flex-wrap gap-2">
-                    {product.tech.map((t) => (
-                      <span key={t} className="px-3 py-1 rounded-full text-xs font-mono font-semibold" style={{ color: product.accent, border: `1px solid ${product.accent}55`, background: `${product.accent}0d` }}>
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                  <svg className="w-6 h-6 text-haze group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-200" style={{ color: product.accent }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M7 17L17 7M17 7H7M17 7v10" />
-                  </svg>
-                </div>
-              </motion.a>
+                <h3 className="font-display text-lg font-bold text-bright mb-3">{s.title}</h3>
+                <p className="text-haze text-sm leading-relaxed">{s.desc}</p>
+              </motion.div>
             </FadeIn>
           ))}
         </div>
+
+        {/* Stats + CTA */}
+        <FadeIn delay={0.3}>
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+            <div className="grid grid-cols-4 gap-6 md:gap-10">
+              {stats.map((stat) => (
+                <div key={stat.label}>
+                  <div className="font-display text-3xl font-extrabold text-spectrum">{stat.value}</div>
+                  <div className="text-xs text-haze font-mono uppercase tracking-widest mt-1">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+            <a
+              href="https://grubforge.com"
+              target="_blank"
+              rel="noreferrer"
+              className="group relative px-9 py-4 font-bold text-ink rounded-full overflow-hidden text-center shrink-0"
+              style={{ background: 'linear-gradient(100deg, #fbbf24, #ec4899)' }}
+            >
+              <span className="relative z-10">Visit grubforge.com ↗</span>
+              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'linear-gradient(100deg, #ec4899, #fbbf24)' }} />
+            </a>
+          </div>
+        </FadeIn>
       </div>
     </section>
   )

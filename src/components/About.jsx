@@ -6,7 +6,7 @@ const stats = [
   { value: 3, suffix: '+', label: 'Years Engineering', color: '#22d3ee' },
   { value: 5, suffix: '+', label: 'Years in Forensics', color: '#ec4899' },
   { value: 'M.S.', suffix: '', label: 'Computer Science', color: '#a78bfa' },
-  { value: 2, suffix: '', label: 'Live Products', color: '#a3e635' },
+  { value: 6, suffix: '', label: 'Live Products', color: '#a3e635' },
 ]
 
 function Counter({ value, suffix, color }) {

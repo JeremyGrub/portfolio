@@ -3,6 +3,58 @@ import { FadeIn, Eyebrow } from './ui'
 
 const projects = [
   {
+    title: 'Chalkline',
+    subtitle: 'AI Workspace for Commercial Construction',
+    description:
+      'Turns plans, specs, and field notes into instant cited answers, polished daily reports, and ready-to-send RFIs. A field super talks for 60 seconds; the AI produces the paperwork — voice and photo input, source-cited spec Q&A, and auto-formatted RFIs.',
+    tech: ['React', 'Node.js', 'AI / Vision', 'PostgreSQL'],
+    liveUrl: 'https://chalkline.build',
+    githubUrl: null,
+    badge: 'Grüb Forge',
+    highlight: 'Live product',
+    accent: '#22d3ee',
+    num: '001',
+  },
+  {
+    title: 'RaceGrid',
+    subtitle: 'Hybrid Fitness Event Platform',
+    description:
+      'Full event platform for hybrid fitness racing — create events, collect registrations and payments, run server-side wave timers on the gym floor, and post results to live leaderboards. PIN-protected timing lets volunteers run race day without a login. Actively used by real events.',
+    tech: ['React', 'Node.js', 'PostgreSQL', 'Payments'],
+    liveUrl: 'https://racegrid.fit',
+    githubUrl: null,
+    badge: 'Grüb Forge',
+    highlight: 'Used at live events',
+    accent: '#ec4899',
+    num: '002',
+  },
+  {
+    title: 'Little Hooray',
+    subtitle: 'Custom Party Website Studio',
+    description:
+      'Every party gets its own hand-designed invitation website — kids’ birthdays, baby showers, any big day. Custom animated themes (no templates), live RSVP forms, countdowns, maps, and shareable links guests just tap. Multiple client sites live.',
+    tech: ['React', 'Custom Design', 'RSVP Forms'],
+    liveUrl: 'https://littlehooray.com',
+    githubUrl: null,
+    badge: 'Grüb Forge',
+    highlight: 'Live product',
+    accent: '#a3e635',
+    num: '003',
+  },
+  {
+    title: 'Thru.',
+    subtitle: 'Real-Time Golf Tournament Scoring',
+    description:
+      'Live golf tournament scoring with tokenized links and public leaderboards — players score from their phones with zero app downloads. Built for the way real tournaments actually run.',
+    tech: ['React', 'Real-time', 'Leaderboards'],
+    liveUrl: 'https://thru.golf',
+    githubUrl: null,
+    badge: 'Grüb Forge',
+    highlight: 'Live product',
+    accent: '#fbbf24',
+    num: '004',
+  },
+  {
     title: 'Latent Lab Academy',
     subtitle: 'Forensic Education Platform',
     description:
@@ -12,21 +64,21 @@ const projects = [
     githubUrl: 'https://github.com/JeremyGrub/fingerprint-comparison',
     badge: 'Grüb Forge',
     highlight: 'Used in education',
-    accent: '#22d3ee',
-    num: '001',
+    accent: '#a78bfa',
+    num: '005',
   },
   {
     title: 'DM Finder',
-    subtitle: 'TTRPG Matchmaking Platform',
+    subtitle: 'TTRPG Matchmaking Marketplace',
     description:
-      'A platform that connects tabletop RPG players with the perfect Dungeon Master. Built out of a genuine passion for the TTRPG community with a clean discovery and matchmaking experience.',
+      'The marketplace where D&D players find and hire skilled Dungeon Masters — find, book, and play. Built out of a genuine passion for the TTRPG community with a clean discovery and matchmaking experience.',
     tech: ['React', 'Node.js', 'PostgreSQL'],
     liveUrl: 'https://dmfinder.io',
     githubUrl: null,
     badge: 'Grüb Forge',
     highlight: 'Live product',
-    accent: '#ec4899',
-    num: '002',
+    accent: '#22d3ee',
+    num: '006',
   },
   {
     title: 'Ask Winston',
@@ -38,8 +90,8 @@ const projects = [
     githubUrl: 'https://github.com/JeremyGrub/solo-project',
     badge: null,
     highlight: null,
-    accent: '#a3e635',
-    num: '003',
+    accent: '#ec4899',
+    num: '007',
   },
 ]
 
@@ -57,7 +109,7 @@ export default function Projects() {
 
         <div className="space-y-8">
           {projects.map((project, i) => (
-            <FadeIn key={project.title} delay={0.1 * (i + 1)}>
+            <FadeIn key={project.title} delay={0.05 * (i + 1)}>
               <motion.div
                 whileHover={{ x: 8 }}
                 transition={{ duration: 0.25 }}
